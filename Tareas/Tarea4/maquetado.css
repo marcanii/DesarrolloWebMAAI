@@ -1,0 +1,136 @@
+.container{
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    width: 950px;
+    height: auto;
+}
+
+.header{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    width: auto;
+}
+
+.header img{
+    width: 90px;
+}
+
+.header .items{
+    padding: 20px;
+    width: auto;
+}
+
+.header .items #title1{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
+    font-weight: bold;
+}
+.header .items #title2{
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    color: blue;
+    font-weight: bold;
+}
+.header .items #text{
+    text-align: center;
+    font-size: 18px;
+}
+
+.letter_container{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+.letter{
+    background-color: yellow;
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.container_body{
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+}
+
+.container_body .items{
+    background-color: aquamarine;
+    border-right: 1px solid #000;
+}
+
+.menu{
+    background-color: blue;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+}
+.menu li{
+    list-style-type: none;
+    margin: 10px;
+    width: 100px;
+    background-color: aliceblue;
+    border: 1px solid #000;
+    text-align: center;
+    padding: 7px;
+}
+
+.container_body .items1{
+    text-align: left;
+    padding-top: 30px;
+    width: 550px;
+    margin: 0px;
+}
+
+.container_body .items2{
+    background-color: aquamarine;
+    border-left: 1px solid #000;
+}
+
+.sub_items{
+    margin: 0px;
+    padding: 10px;
+}
+
+.sub_items img{
+    width: 200px;
+}
+
+.enter_page{
+    background-color: blanchedalmond;
+    padding-left: 200px;
+    font-size: 17px;
+}
+
+.enter_page p {
+    margin: 0px;
+}
+
+#counter {
+    font-size: 25px;
+    background-color: #df241d;
+    margin: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.footer{
+    font-size: 17px;
+    text-align: center;
+    background-color: rgb(57, 122, 182);
+    padding: 5px;
+}
+
