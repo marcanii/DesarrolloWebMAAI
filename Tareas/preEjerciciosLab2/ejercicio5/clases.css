@@ -1,0 +1,21 @@
+.bg-rojo{
+    background-color: red;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.bg-amarillo{
+    background-color: rgb(231, 243, 63);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.bg-verde{
+    background-color: green;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
