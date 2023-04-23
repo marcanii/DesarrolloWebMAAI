@@ -45,7 +45,6 @@ class examen{
                 $letra = $this->cadena1[$i];
             }
             echo '<td>'.$letra.'</td>';
-            
         }
         echo '</tr></table>';
     }
