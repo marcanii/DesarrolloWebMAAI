@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = prompt("Introducir a: ");
+        let b = prompt("Introducir b: ");
+        let c = prompt("Introducir c: ");
+        let mayor=0;
+        if (a>b && a>c) {
+            mayor = a;
+        }
+        if (b>a && b>c) {
+            mayor = b;
+        }
+        if (c>b && c>a) {
+            mayor = c;
+        }
+        document.write(`<div style="
+        text-align:center;
+        background-color: #da2946;
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+        ">`);
+            document.write(`<p style="font-size:30px;">${mayor}</p>`);
+        document.write(`</div>`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      width: 60px;
+      height: 60px;
+      border: 1px solid black;
+    }
+
+    .blanco {
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .azul {
+      background-color: #da2946;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    /*
+    solicita las filas y columnas imprime una tabla de ajedrez
+    */
+    let fila = prompt("introducir filas: ");
+    let columna = prompt("introducir columnas: ");
+    let nombre = prompt(`Introduce un nombre: `);
+    document.write(`<table style="border:1px solid black;">`);
+    let cont = 0;
+    for (let i = 0; i < parseInt(fila); i++) {
+      document.write(`<tr>`);
+      for (let j = 0; j < parseInt(columna); j++) {
+        if ((j + i) % 2 == 0) {
+          if (cont < nombre.length) {
+            document.write(`<td class="blanco">
+                        ${nombre[cont]}</td>`);
+            cont += 1;
+          }
+          else {
+            document.write(`<td class="blanco">
+                    &nbsp; </td>`);
+          }
+        } else {
+          document.write(`<td class="azul">
+                    &nbsp; </td>`);
+        }
+      }
+      document.write(`</tr>`);
+    }
+    document.write(`</table>`);
+  </script>
+</body>
+
+</html>
