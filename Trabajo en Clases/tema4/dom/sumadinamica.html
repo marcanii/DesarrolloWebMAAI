@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" name="cantidad" id="cantidad">
+    <button type="button" id="btn-cant">Mostrar</button>
+    <br>
+    <div id="valores">
+
+    </div>
+    <div id="resultado">
+    </div>
+    <script>
+        document.getElementById('btn-cant').addEventListener('click', function(){
+            var n = document.getElementById('cantidad').value;
+            var html="";
+            for(i=0;i<n;i++){
+                html+=`<input type="number" name="valores"><br>`;
+            }
+            html += `<button type="button" onclick="Calcular()">Calcular</button>`;
+            document.getElementById('valores').innerHTML=html;
+        });
+        function Calcular(){
+            var vector = document.getElementsByName('valores');
+            var suma = 0;
+            for(i=0;i<vector.length;i++){
+                suma+= vector[i].valueAsNumber;
+            }
+            document.getElementById('resultado').innerHTML='La Suma es= '+suma;
+        };
+        
+
+    </script>
+</body>
+</html>

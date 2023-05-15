@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="a">A:</label>
+        <input type="number" name="a" id="a">
+    </div>
+    <div>
+        <label for="b">B:</label>
+        <input type="number" name="b" id="b">
+    </div>
+    <div>
+        <label for="c">C:</label>
+        <input type="number" name="c" id="c">
+    </div>
+    <button type="button" id="boton">Mayor</button>
+
+    <script>
+        document.getElementById('boton').addEventListener('click', function(){
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var c = document.getElementById("c").value;
+            if(a>b && a>c){
+                document.getElementById("a").style.backgroundColor="green";
+                document.getElementById("a").style.color="red";
+            }
+            else if(b>a && b>c){
+                document.getElementById("b").style.backgroundColor="green";
+                document.getElementById("b").style.color="red";
+            }
+            else if(c>b && c>a){
+                document.getElementById("c").style.backgroundColor="green";
+                document.getElementById("c").style.color="red";
+            }
+        });
+    </script>
+</body>
+</html>
