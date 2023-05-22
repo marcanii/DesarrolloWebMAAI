@@ -1,0 +1,19 @@
+#cabeza{
+    background-color: rgb(20, 170, 170);
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #000000;
+}
+#contenido{
+    display: flex;
+    border: 1px solid #000000;
+}
+.menu{
+    background-color: rgb(158, 236, 158);
+    width: 30%;
+}
+#datos{
+    background-color: rgb(255, 255, 255);
+    width: 70%;
+    padding: 20px;
+}

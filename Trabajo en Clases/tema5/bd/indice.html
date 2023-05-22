@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="ajax.js"></script>
+</head>
+
+<body>
+    <div id="cabeza">
+        Mi pagina web para aprender AJAX y BD
+    </div>
+    <div id="contenido">
+        <div class="menu">
+            <ul>
+                <li><a href="javascript:cargarContenido('read.php')">Listar</a></li>
+                <!-- no quiero que me cargue todo, solo esta parte por eso uso ajax -->
+                <li><a href="javascript:cargarContenido('form_create.php')">Insertar</a></li>
+            </ul>
+        </div>
+        <div id="datos">
+            <!-- este es el contenedor que mostrara los resultados de la consulta de ajax  
+            es muy necesario para el uso de ajax -->
+            Bienvenido a la pagina de BD
+        </div>
+    </div>
+</body>
+
+</html>
