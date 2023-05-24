@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+    }
+    th {
+      border: 1px solid black;
+    }
+    </style>
+</head>
+<body>
+    <h1>Tabla estudiantes</h1>
+    <script>
+        let n = prompt(`Introd. cantidad de estudiantes: `);
+        var arr_estudiantes = [];
+        var arr_aux = [];
+        for(let i=0;i<n;i++){
+            let id = prompt(`Introduce un numero o id:`);
+            let nom = prompt(`Introduce nombre completo:`);
+            let edad = prompt(`Introduce edad:`);
+            let materia = prompt(`Introduce materia:`);
+            let nota = prompt(`Introuce Nota:`);
+            arr_aux = [{nro:id, Nombre:nom, Edad:edad, Materia:materia, Nota:nota}];
+            arr_estudiantes = arr_estudiantes.concat(arr_aux);
+        }
+        document.write(`<table>`);
+        document.write(`<tr><th>Nro</th><th>Nombres</th><th>Edad</th><th>Materia</th><th>Nota</th></tr>`);
+        arr_estudiantes.forEach(element => {
+            document.write(`<tr id="${element.nro}">`);
+            document.write(`<td>${element.nro}</td>`);
+            document.write(`<td>${element.Nombre}</td>`);
+            document.write(`<td>${element.Edad}</td>`);
+            document.write(`<td>${element.Materia}</td>`);
+            document.write(`<td>${element.Nota}</td>`);
+            document.write(`</tr>`);
+        });
+        document.write(`</table>`);
+
+        function encontrarMejorEstudiante(){
+            var aux = 0;
+            var id = '';
+            arr_estudiantes.forEach(element => {
+                if(parseInt(element.Nota) > aux){
+                    aux = parseInt(element.Nota);
+                    id = element.nro;
+                }
+            });
+            document.getElementById(id).style.backgroundColor = 'green';
+        }
+    </script>
+    <button onclick="encontrarMejorEstudiante()">Mayor</button>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Elemento Lista</label>
+        <input type="text" name="elemento" id="elemento">
+        <button onclick="agregar()">Añadir</button>
+    </div>
+    <div>
+        <ul id="contenido">
+
+        </ul>
+    </div>
+    <script>
+        var listaCompra = [];
+        var aux = '';
+        function agregar(){
+            let a = document.getElementById("elemento").value;
+            listaCompra = listaCompra.concat([a]);
+            var ul = '<ul>';
+            var bandera = true;
+            listaCompra.forEach(element => {
+                for(let i=0; i<a.length;i++){
+                    if(element[i]=='d'){
+                        if(element[i+1]=='e'){
+                            ul += `<li style="background-color:yellow">${element}</li>`;
+                            bandera = false;
+                        }
+                    }
+                }
+                if(bandera){
+                    ul += `<li>${element}</li>`;
+                }
+                bandera = true
+            });
+
+            ul += '</ul>';
+            document.getElementById("contenido").innerHTML = ul;
+        }
+    </script>
+</body>
+</html>

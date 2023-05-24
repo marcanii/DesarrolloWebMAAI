@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function agrandar(){
+            let tam = document.getElementById('tam').value;
+            document.getElementById('imagen').width += parseFloat(tam);
+        }
+        function reducir(){
+            let tam = document.getElementById('tam').value;
+            document.getElementById('imagen').width -= parseFloat(tam);
+        }
+    </script>
+    <h2>Imagen</h2>
+    
+    <img src="imagen.jpg" id="imagen" width="200px">
+    
+    <div>
+        <input type="number" name="tam" id="tam">
+        <button onclick="agrandar()">Agrandar</button>
+        <button onclick="reducir()">Reducir</button>
+    </div>
+</body>
+</html>
