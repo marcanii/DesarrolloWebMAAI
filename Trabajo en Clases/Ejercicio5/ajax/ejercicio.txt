@@ -1,0 +1,8 @@
+crear las tablas departamento con los campos id, nombre, y la tabla provincia con los
+campos id, iddepartamento, nombre
+
+llenar con los datos de por lo menos 2 departamentos luego crear procedencias.html que permite construir
+2 combos interdepartamental que permite elegir una provincia, consultando a las tablas antes mencionadas
+
+a) construir porcedencias utilizando ajax
+b) construir porcedencias utilizando fetch

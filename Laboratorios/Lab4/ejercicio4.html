@@ -8,40 +8,26 @@
 </head>
 <body>
     <div>
-        <label for="">Elemento Lista</label>
-        <input type="text" name="elemento" id="elemento">
+        <label for="">Agregar a lista</label>
+        <input type="text" name="articulo" id="articulo">
         <button onclick="agregar()">Añadir</button>
     </div>
     <div>
-        <ul id="contenido">
+        <ul id="lista">
 
         </ul>
     </div>
     <script>
-        var listaCompra = [];
-        var aux = '';
         function agregar(){
-            let a = document.getElementById("elemento").value;
-            listaCompra = listaCompra.concat([a]);
-            var ul = '<ul>';
-            var bandera = true;
-            listaCompra.forEach(element => {
-                for(let i=0; i<a.length;i++){
-                    if(element[i]=='d'){
-                        if(element[i+1]=='e'){
-                            ul += `<li style="background-color:yellow">${element}</li>`;
-                            bandera = false;
-                        }
-                    }
-                }
-                if(bandera){
-                    ul += `<li>${element}</li>`;
-                }
-                bandera = true
-            });
+            let articulo = document.getElementById('articulo').value;
+            lista = document.getElementById('lista');
 
-            ul += '</ul>';
-            document.getElementById("contenido").innerHTML = ul;
+            const element = document.createElement('li');
+            element.innerHTML = articulo;
+            if(articulo.includes('de')){
+                element.style.backgroundColor = 'green';
+            }
+            lista.appendChild(element);
         }
     </script>
 </body>
