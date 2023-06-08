@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu {
+            display: flex;
+            flex-direction: row;
+            border: 1px solid black;
+            padding: 15px;
+            width: 400px;
+            background-color: rgb(160, 137, 182);
+        }
+        #resultado {
+            background-color: rgb(183, 241, 183);
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 250px;
+        }
+
+        table td,
+        table th {
+            border: 1px solid #000000;
+            padding: 8px;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .result-row {
+            background-color: #e6f7ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <form action="javascript:calcularOperacion()" method="POST" enctype="multipart/form-data" id="options_nm">
+            Tabla del <input type="number" name="n" id="n"><br>
+
+            <input type="radio" id="+" name="opcion" value="+">
+            <label for="Suma">Suma</label><br>
+
+            <input type="radio" id="-" name="opcion" value="-">
+            <label for="Resta">Resta</label><br>
+
+            <input type="radio" id="*" name="opcion" value="*">
+            <label for="Multiplicacion">Multiplicacion</label><br>
+
+            <input type="radio" id="/" name="opcion" value="/">
+            <label for="Division">Division</label><br>
+
+            Hasta el <input type="number" name="m" id="m"><br>
+
+            <input type="submit" value="Tabla">
+        </form>
+    </div>
+    <div id="resultado"></div>
+</body>
+
+</html>

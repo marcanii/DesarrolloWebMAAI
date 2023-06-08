@@ -1,0 +1,33 @@
+#bodymain {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #000000;
+}
+#menu {
+    width: 200px;
+    background-color: #a1f7d3;
+    border-right: 1px solid #000000;
+}
+#menu ul{
+    list-style-type: none;
+}
+#menu li{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000000;
+}
+#menu a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+#contenido {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #c683ec;
+}
+#mensaje {
+    width: 100%;
+    background-color: #4e5cad;
+    border-top: 1px solid #000000;
+}
