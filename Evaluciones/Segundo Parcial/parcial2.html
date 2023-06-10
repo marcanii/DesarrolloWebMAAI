@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="fetch.js"></script>
+    <script src="ajax.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <ul>
+                <li><a href="javascript:pregunta2()">Ejercicio2</a></li>
+            </ul>
+            <div id="titulo">Alumno: Marcani Aguilar Abel Israel</div>
+            <ul>
+                <li><a href="javascript:cargarContenidoFetch('forminsertar.html', 'Pregunta 3 Insertar en fetch')">Ejercicio3</a></li>
+            </ul>
+        </div>
+        <div id="contenido">
+
+        </div>
+        <div class="footer">
+            <ul>
+                <li><a href="javascript:cargarContenidoAjax('listar.php', 'Pregunta 4 Listar libros')">Ejercicio4</a></li>
+            </ul>
+            <div id="mensaje">Fecha: 10/06/2023</div>
+            <button id="blanconegro" onclick="blanconegro()">Blaco/Negro</button>
+            <ul>
+                <li><a href="javascript:listar('Pregunta 5 Select de libros')">Ejercicio5</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function pregunta2() {
+            document.getElementById("titulo").textContent = "Pregunta 2 DOM en Javascript";
+            var contenido = document.getElementById("contenido");
+            var html = "";
+            html += `
+            alto <input type="number" id="alto">
+            ancho <input type="number" id="ancho"><br>
+            <button onclick="dibujar()">Dibujar</button>
+            <div id='tabla'></div>
+            `
+            contenido.innerHTML = html;
+        }
+        function dibujar() {
+            let alto = document.getElementById("alto").value;
+            let ancho = document.getElementById("ancho").value;
+            var contenido = document.getElementById("tabla");
+            let tabla = "<table>";
+            for (i = 0; i < alto; i++) {
+                tabla += "<tr>";
+                for (let j = 0; j < ancho; j++) {
+                    tabla += "<td>&nbsp;</td>";
+                }
+                tabla += "</tr>";
+            }
+            tabla += "</table>";
+            contenido.innerHTML = tabla;
+        }
+        function blanconegro(){
+            document.getElementById("titulo").style.backgroundColor = '#000';
+            document.getElementById("mensaje").style.backgroundColor = '#000';
+            setTimeout(function() {
+                cargarColores();
+            }, 3000);
+        }
+        function cargarColores(){
+            document.getElementById("titulo").style.backgroundColor = 'rgb(83, 83, 247)';
+            document.getElementById("mensaje").style.backgroundColor = 'rgb(245, 80, 80)';
+        }
+    </script>
+</body>
+</html>

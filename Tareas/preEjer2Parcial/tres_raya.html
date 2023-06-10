@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .board {
+            display: flex;
+            flex-wrap: wrap;
+            width: 200px;
+        }
+
+        .board input {
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tres en Raya</h1>
+    <div id="message">Turno del jugador: X</div>
+    <div class="board">
+        <input type="text" id="cell0" maxlength="1" onclick="fillPlayer('cell0')">
+        <input type="text" id="cell1" maxlength="1" onclick="fillPlayer('cell1')">
+        <input type="text" id="cell2" maxlength="1" onclick="fillPlayer('cell2')">
+        <input type="text" id="cell3" maxlength="1" onclick="fillPlayer('cell3')">
+        <input type="text" id="cell4" maxlength="1" onclick="fillPlayer('cell4')">
+        <input type="text" id="cell5" maxlength="1" onclick="fillPlayer('cell5')">
+        <input type="text" id="cell6" maxlength="1" onclick="fillPlayer('cell6')">
+        <input type="text" id="cell7" maxlength="1" onclick="fillPlayer('cell7')">
+        <input type="text" id="cell8" maxlength="1" onclick="fillPlayer('cell8')">
+    </div>
+    <button onclick="resetInputs()">Reiniciar</button>
+
+    <script>
+        let currentPlayer = 'X';
+
+        function fillPlayer(cellId) {
+            const input = document.getElementById(cellId);
+            if (input && input.value === '') {
+                input.value = currentPlayer;
+                input.disabled = true;
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                document.getElementById("message").textContent = `Turno del jugador: ${currentPlayer}`;
+            }
+        }
+
+        function resetInputs() {
+            currentPlayer = 'X';
+            const inputs = document.querySelectorAll('.board input');
+            inputs.forEach(input => {
+                input.value = '';
+                input.disabled = false;
+            });
+            document.getElementById("message").textContent = `Turno del jugador: ${currentPlayer}`;
+        }
+    </script>
+</body>
+
+</html>
