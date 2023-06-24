@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="scrip.js"></script>
+    <style>
+        #teclado {
+            display: flex;
+            flex-wrap: wrap;
+            width: 200px;
+        }
+
+        #teclado button {
+            font-size: 24px;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+        }
+
+        #limpiar {
+            width: 90px;
+        }
+
+        #entrar {
+            font-size: 24px;
+            width: 90px;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <form action="autenticar.php" method="GET">
+        <div>
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" id="usuario" required>
+        </div>
+        <div>
+            <label for="contrasena">Contraseña</label>
+            <input type="number" name="contrasena" id="contrasena" readonly required>
+        </div>
+    </form>
+    <div id="teclado">
+        <button style="width:100px" onclick="num_aleatorios()">Teclado</button>
+    </div>
+    <div id="aux"></div>
+    <script>
+        function num_aleatorios() {
+            let div = document.getElementById('teclado');
+            let html = '';
+            let i = 1;
+            while (i < 10) {
+                num = [];
+                a = parseInt(Math.random() * 10);
+                console.log(a);
+                if (!(a in num)) {
+                    num[i] = a;
+                    html += `<button id="num${i}" onclick="llenar('num${i}')">${i}</button>`;
+                    i += 1;
+                }
+            }
+            html += `<button style="width:90px" id="entrar" onclick="autenticar()">Entrar</button>
+                     <button style="width:90px" id="clean" onclick="clean()">Limpiar</button>`;
+            div.innerHTML = html;
+        }
+        function llenar(numId) {
+            let contra = document.getElementById('contrasena');
+            //console.log(contra);
+            let valor = parseInt(document.getElementById(numId).textContent);
+            //console.log(valor);
+            contra.value += valor;
+        }
+        function clean() {
+            document.getElementById('contrasena').value = '';
+            document.getElementById('usuario').value = '';
+        }
+        function autenticar() {
+            let usuario = document.getElementById('usuario').value;
+            let contra = document.getElementById('contrasena').value;
+            url = 'autenticar.php?usuario=' + usuario + '&contrasena=' + contra;
+
+            //carga el contenido de una pagina en el lugar donde estan los datos
+            var contenedor = document.getElementById('body');
+            var ajax = new XMLHttpRequest();
+            ajax.open('GET', url, true);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4)
+                //4 se ha recibido todos los datos de las repsuesta del servidor
+                {
+                    contenedor.innerHTML = ajax.responseText;
+                }
+            };
+            ajax.send();
+        }
+    </script>
+</body>
+
+</html>
