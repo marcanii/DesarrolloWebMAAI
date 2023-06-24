@@ -19,7 +19,7 @@ if ($resultado->num_rows > 0)
 ?>
     <table>
         <tr>
-            <th>Fotografia</th>    
+            <th>Fotografia</th>
             <th><a href="javascript:cargarContenidoAjax('listar.php?orden=titulo','Pregunta 4 Listar libros')"> Titulo</a></th>
             <th><a href="javascript:cargarContenidoAjax('listar.php?orden=autor','Pregunta 4 Listar libros')">Autor</a> </th>
             <th><a href="javascript:cargarContenidoAjax('listar.php?orden=ideditorial','Pregunta 4 Listar libros')">ID Editorial</a></th>

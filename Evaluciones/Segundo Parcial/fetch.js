@@ -12,18 +12,19 @@ function cargarTitulo(titulo) {
 }
 
 function listar(titulo) {
-    cargarTitulo(titulo)
+    cargarTitulo(titulo);
     var contenedor = document.getElementById('contenido');
     fetch('datos.php')
         .then(response => response.text())
         .then(data => {
+            //console.log(data);
             objeto = JSON.parse(data)
             html = dibujar(objeto);
             contenedor.innerHTML = html;
         }
         );
     function dibujar(objeto) {
-        console.log(objeto);
+        //console.log(objeto);
         let html = "<select id='optitulo' onclick='cargarImagen()'>";
         for (let i = 0; i < objeto.length; i++) {
             html += `<option value="${i}">${objeto[i].titulo}</option>`
@@ -34,7 +35,7 @@ function listar(titulo) {
     }
 }
 function cargarImagen(){
-    console.log("entro a cargar img");
+    //console.log("entro a cargar img");
     let id = document.getElementById("optitulo").value;
     document.getElementById("imag").innerHTML = `<img width="100px" src="images/${objeto[id].imagen}"></img>`;
 }
